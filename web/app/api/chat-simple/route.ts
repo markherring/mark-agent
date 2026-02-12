@@ -89,6 +89,10 @@ export async function POST(request: Request) {
       }
     ]
 
+    console.log('Calling Anthropic API...')
+    console.log('Model:', 'claude-sonnet-4-20250514')
+    console.log('Message count:', messages.length)
+
     const response = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 4096,
@@ -96,15 +100,20 @@ export async function POST(request: Request) {
       messages: messages
     })
 
+    console.log('✓ Anthropic API response received')
+
     const responseText = response.content[0].type === 'text'
       ? response.content[0].text
       : 'Unable to generate response'
 
     return NextResponse.json({ response: responseText })
-  } catch (error) {
-    console.error('Error in chat API:', error)
+  } catch (error: any) {
+    console.error('✗ Error in chat API:', error)
+    console.error('Error name:', error.name)
+    console.error('Error message:', error.message)
+    console.error('Error stack:', error.stack)
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      { error: error.message || 'Failed to process request' },
       { status: 500 }
     )
   }
