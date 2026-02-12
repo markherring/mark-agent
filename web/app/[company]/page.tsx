@@ -65,7 +65,7 @@ export default function InterviewPage({ params }: { params: { company: string } 
     setAbortController(controller)
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/chat-simple', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -80,50 +80,16 @@ export default function InterviewPage({ params }: { params: { company: string } 
         throw new Error('Failed to get response')
       }
 
-      // Handle streaming response
-      const reader = response.body?.getReader()
-      const decoder = new TextDecoder()
-      let accumulatedText = ''
+      // Handle simple JSON response (non-streaming for now)
+      const data = await response.json()
 
-      // Create placeholder message
       const assistantMessage: Message = {
         role: 'assistant',
-        content: '',
+        content: data.response,
         timestamp: new Date()
       }
+
       setMessages(prev => [...prev, assistantMessage])
-
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read()
-          if (done) break
-
-          const chunk = decoder.decode(value)
-          const lines = chunk.split('\n')
-
-          for (const line of lines) {
-            if (line.startsWith('data: ')) {
-              const data = line.slice(6)
-              if (data === '[DONE]') break
-
-              try {
-                const parsed = JSON.parse(data)
-                if (parsed.text) {
-                  accumulatedText += parsed.text
-                  // Update the last message with accumulated text
-                  setMessages(prev => {
-                    const updated = [...prev]
-                    updated[updated.length - 1].content = accumulatedText
-                    return updated
-                  })
-                }
-              } catch (e) {
-                // Skip invalid JSON
-              }
-            }
-          }
-        }
-      }
 
       // Track usage
       await fetch('/api/track', {
