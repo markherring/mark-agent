@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.markdown-body {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.markdown-body p {
+  @apply mb-4;
+}
+
+.markdown-body ul {
+  @apply list-disc ml-6 mb-4;
+}
+
+.markdown-body ol {
+  @apply list-decimal ml-6 mb-4;
+}
+
+.markdown-body strong {
+  @apply font-semibold;
+}
+
+.markdown-body code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+}
