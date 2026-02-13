@@ -94,12 +94,24 @@ export default function InterviewPage({ params }: { params: { company: string } 
       setMessages(prev => [...prev, assistantMessage])
 
       if (reader) {
+        let pendingUpdate = false
+        const flushUpdate = () => {
+          pendingUpdate = false
+          setMessages(prev => {
+            const updated = [...prev]
+            updated[updated.length - 1] = { ...updated[updated.length - 1], content: accumulatedText }
+            return updated
+          })
+        }
+
+        let buffer = ''
         while (true) {
           const { done, value } = await reader.read()
           if (done) break
 
-          const chunk = decoder.decode(value)
-          const lines = chunk.split('\n')
+          buffer += decoder.decode(value, { stream: true })
+          const lines = buffer.split('\n')
+          buffer = lines.pop() || '' // Keep incomplete line in buffer
 
           for (const line of lines) {
             if (line.startsWith('data: ')) {
@@ -110,12 +122,11 @@ export default function InterviewPage({ params }: { params: { company: string } 
                 const parsed = JSON.parse(data)
                 if (parsed.text) {
                   accumulatedText += parsed.text
-                  // Update the last message with accumulated text
-                  setMessages(prev => {
-                    const updated = [...prev]
-                    updated[updated.length - 1].content = accumulatedText
-                    return updated
-                  })
+                  // Batch updates using requestAnimationFrame to avoid overwhelming mobile browsers
+                  if (!pendingUpdate) {
+                    pendingUpdate = true
+                    requestAnimationFrame(flushUpdate)
+                  }
                 }
               } catch (e) {
                 // Skip invalid JSON
@@ -123,17 +134,19 @@ export default function InterviewPage({ params }: { params: { company: string } 
             }
           }
         }
+        // Final flush to ensure all text is rendered
+        flushUpdate()
       }
 
-      // Track usage
-      await fetch('/api/track', {
+      // Track usage (fire-and-forget, don't let errors affect the chat)
+      fetch('/api/track', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           company: companyName,
           question
         })
-      })
+      }).catch(() => {})
     } catch (error: any) {
       if (error.name === 'AbortError') {
         console.log('Request aborted by user')
