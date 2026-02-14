@@ -66,9 +66,9 @@
 - **Enterprise features** — Brand kits, collaboration, admin tools, SSO, SOC 2 Type II, dedicated support, unlimited basic seats.
 - **API** — Launching in ~3 months. Enterprise-only, bulk/batch editing. Potential unlock for enterprise adoption.
 
-**Descript's moat:** Text-based editing paradigm + Overdub voice cloning + Underlord AI agent + OpenAI partnership. The "edit like a doc" workflow is genuinely differentiated. Vertical integration from capture → edit → publish.
+**Descript's moat (per Will):** The editing experience — "nobody can touch our editing capabilities today." Text-based editing paradigm + Overdub voice cloning + Underlord AI agent + OpenAI partnership. Vertical integration from capture → edit → publish. Bring-your-own-model strategy (not locked to one AI provider). Strong NDR (122-127%) = customers are sticky once in.
 
-**Risk:** Consumer-creator tools market is crowded and commoditizing fast with AI. The enterprise pivot is the growth bet.
+**Risk:** Consumer-creator tools market is crowded and commoditizing fast with AI. Competitive space is complex and always evolving. You can now create videos in Gemini/Claude/ChatGPT. Open question: how much does editing matter if people just want to gen media? The enterprise pivot is the growth bet. Significant engineering turnover (many went to OpenAI) after Andrew stepped down.
 
 ---
 
@@ -76,15 +76,18 @@
 
 | Competitor | Strength | vs Descript |
 |---|---|---|
+| **Synthesia** ⚠️ | AI avatar video generation, L&D focus | **Most feared competitor per Will.** Crushing enterprise L&D with avatars. Well north of $200M raise. Forbes AI Top 50. Winning where Descript wants to go. |
+| **CapCut** | Social clips, marketing content | Strong for "create clips for social to drive pipeline." Arguably better for that specific use case. |
+| **HeyGen** | Gen video, AI-first | Speed of asset creation. Fired entire GTM team recently, but rebuilding (hired Will's friend from OpenAI as head of sales). |
 | **Riverside.fm** | Studio-quality recording, 4K | Better recording, weaker editing |
 | **Captions** | Mobile-first, social clips | More consumer, less enterprise |
 | **Canva** | Design + video | Better visual design, weaker editing depth |
-| **Adobe Premiere** | Pro editing | Traditional timeline, steeper learning curve |
-| **Synthesia** | AI avatar video generation | Different use case (no human recording) |
+| **Adobe Premiere** | Pro editing | Traditional timeline, steeper learning curve. Potential acquirer of Descript per Will. |
+| **Gemini/Claude/ChatGPT** | Gen AI video creation | Encroaching — you can create videos in Gemini now. Threat if editing matters less over time. |
 | **Otter.ai** | Meeting transcription | Meeting-focused, not editing |
 | **DaVinci Resolve** | Pro-grade editing (free) | More powerful but far more complex |
 
-**Descript's differentiator:** Open question — "edit like a doc" is genuinely unique, but enterprise buyers need more than a clever paradigm. The moat is the vertical integration from capture → edit → publish, combined with AI features that deliver real productivity gains (not hype). The enterprise bet depends on proving this to marketing, L&D, and sales enablement teams at scale.
+**Descript's differentiator:** The editing experience is genuinely unmatched — Will says "nobody can touch it." But open question: how much does editing matter if gen AI can produce media from scratch? The moat today is the editing workflow + vertical integration from capture → edit → publish. The API launch extends this to programmatic/bulk editing at scale, which is the enterprise unlock.
 
 ---
 
@@ -93,9 +96,9 @@
 | Name | Role | Notes |
 |---|---|---|
 | **Laura Burkhauser** | CEO (since Sep 2025) | Former VP Product at Descript (2 yrs). Before: Dir PM at Twitter (4 yrs), Rent The Runway, Le Tote. IC PM → CEO in 3 years. Product-first leader. Mason marked her as his successor within weeks of her joining. Background: German Lit → management consulting → Amazon → Series C startup → Twitter → Descript. Not a traditional CEO profile — very product/builder oriented. |
-| **Andrew Mason** | Founder & Executive Chair | Founded Groupon. Founded Descript 2017 via Detour (acquired by Bose). Stepped aside Sep 2025. Still around. |
-| **Whitney Steele** | VP Marketing | Currently in role — unclear how this role relates to the new hire. |
-| **Will Paulus** | Sales leader (VP Sales) | Will and I worked at Influxdata for 2 years together.. he ran sales i was CMO |
+| **Andrew Mason** | Founder, now on Board | Founded Groupon. Founded Descript 2017. Stepped aside Sep 2025 — said he's not the right person to shepherd Descript into next growth phase. Per Will: not interested in solving enterprise/business problems, focused on product and family. Culture still reflects his DNA. |
+| **Whitney Steele** | VP Marketing (PLG/Self-serve focus) | Likely overseeing consumer/growth marketing side. Previous marketing leader (possibly Whitney or someone else) was "super smart, very consumer oriented" but didn't flex into enterprise per Will. Laura is running marketing overall with a "gaping hole" for enterprise marketing leader. |
+| **Will Paulus** | VP Sales (Enterprise) | Will and I worked at Influxdata for 2 years together — he ran sales, I was CMO. Runs sales, CS, and sales engineering (11 people). Career sweet spot: moving PLG businesses into enterprise. Previously at Mixpanel, Golia, Stitch. Presented annual planning approach that led to API-first/enterprise-first strategic bet. Strong internal advocate for this hire. |
 | **Sophie Hinkley** | VP People | |
 
 ---
@@ -105,8 +108,26 @@
 
 
 ### Interview Log
-- 2026-01-27 — Laura Burkhauser (CEO) — Strong meeting Clear next step toward 60–90 day plan with NDA financial access.
-- 2026-02-14 — Will Paulus (Sales leader) — Scheduled
+- 2026-01-27 — Laura Burkhauser (CEO) — Strong meeting. Clear next step toward 60–90 day plan with NDA financial access.
+- 2026-02-13 — Will Paulus (VP Sales) — Deep dive on business, culture, strategy, competitive landscape. Will is a strong internal advocate. Key takeaways: enterprise is the bet (API over mobile app), company verbally committed but DNA is still consumer, no enterprise marketing muscle exists. Will coaching on positioning and next steps. Will sharing his interview deck. Next step: email Laura to request next round.
+
+### Will's Coaching for Next Steps
+- Lead with enterprise conviction: "I've done this for a long time. I know what to do. Here's my 30/60/90."
+- Reframe OSS experience as close enough to PLG to be relevant
+- Have a strong point of view on PLG vs Enterprise — keep PLG steady state, drive enterprise
+- Key areas to demonstrate: demand gen staffing, pipeline targets, ICP discipline, team reshaping
+- Will sharing his interview deck as a reference
+- Suggest visiting the office — best way to get a sense of culture
+- Look into Andrew Mason (Groupon founder) to understand culture DNA
+
+### Strategic Context (from Will, Feb 2025)
+- **The big strategic bet:** Laura framed annual planning as two choices: (1) build mobile app → all-in on creators/self-serve, or (2) build API → all-in on enterprise. They chose API/enterprise. Will doubts this would have happened under Andrew Mason.
+- **API launch:** Will's path to hitting $15M target. Takes what Descript does well on a 1:1 basis (studio sound, remove filler words, remove retakes, create clips) and makes it programmatic/bulk. "If I can do this at scale, this is a big business."
+- **Enterprise commitment is verbal, not formal:** "The business is verbally committed to enterprise... but the DNA of the company is still consumer." Marketing hires are all consumer (growth marketing, head of brand). No demand gen. No outbound. ICP only formalized a month ago at SKO.
+- **Culture:** Quirky, creative, video-first, unpolished. Many employees come from video production backgrounds. Strong creative identity. Office manager makes viral internal videos. Laura herself is unpolished (never combs her hair in LinkedIn videos). Will is "the exception" as enterprise sales leader.
+- **Pace of AI:** Overwhelming. New models dropping constantly (Claude, Gemini, GPT). Bring-your-own-model strategy helps but keeping up is a challenge. Competitors emerging fast. Will's buddy at Anthropic says they do 2 sales enablement sessions/week just to keep up.
+- **M&A angle:** Will sees Adobe as an obvious acquisition fit — they need an AI strategy, Descript gets you to 90% polish, Adobe does the final 10%.
+- **Geography:** Enterprise customers heavy in US (tech in Bay Area), UK for media (BBC, The Independent), education scattered. Office in Dogpatch SF, 3 days/week expected for this role.
 
 ### Problems to Solve
 1. **Zero B2B marketing infrastructure** — No historical B2B SaaS marketing leadership. Organization and product DNA is heavily consumer. No playbook, no outbound, no repeatable demand engine.
@@ -131,7 +152,7 @@
 - PLG adoption and brand with creators (6M+ users)
 - Enterprise customer proof points (Salesforce, NYT, BBC, Amazon, Netflix, Apple)
 - Revenue growth (~75% YoY, ~$70M ARR)
-- NRR (130%) and enterprise momentum (sales revenue tripled QoQ)
+- NDR (122–127% per Will) and enterprise momentum ($300K → $800K → $1M/quarter)
 - CEO quality — Laura is sharp, product-obsessed, and building her own team
 
 ---
@@ -169,7 +190,7 @@
 - "PLG and enterprise are not enemies — they're two parts of the same engine. The PLG funnel generates awareness, adoption, and PQLs. The enterprise motion converts the best of those into larger, stickier deals. I've built that bridge at InfluxData and HiveMQ, and I know how to do it without breaking what's working on the PLG side."
 - "With a sales team that went from 1 to 5 AEs and tripled revenue QoQ, you're at the inflection point where marketing needs to shift from supporting hand-raisers to building a repeatable pipeline engine. That's outbound, ABM, content that maps to the enterprise buying cycle, and enablement that helps AEs close faster."
 - "I'm not a video editing expert, and that's fine. I wasn't an MQTT expert before HiveMQ, and I wasn't a time-series database expert before InfluxData. The skill is learning the market, learning the buyer, and building the GTM around what actually drives pipeline and revenue. I've done that across six different technical domains."
-- "130% NRR is a strong signal that the product delivers value after the sale. The enterprise marketing challenge is getting more logos in the door — and once they're in, the product does the expansion work. That's the best kind of enterprise GTM problem to have."
+- "122–127% NDR is a strong signal that the product delivers value after the sale. The enterprise marketing challenge is getting more logos in the door — and once they're in, the product does the expansion work. That's the best kind of enterprise GTM problem to have."
 
 ---
 
