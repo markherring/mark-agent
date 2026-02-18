@@ -180,16 +180,8 @@ export default function InterviewPage({ params }: { params: { company: string } 
         <InterviewHeader company={companyName} />
 
         <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* Suggested Questions — shows first on mobile, sidebar on desktop */}
-          <div className="lg:col-span-1 order-first lg:order-last">
-            <SuggestedQuestions
-              onSelectQuestion={handleAskQuestion}
-              questions={suggestedQuestions}
-            />
-          </div>
-
-          {/* Main Chat Area */}
-          <div className="lg:col-span-2 order-last lg:order-first">
+          {/* Main Chat Area — always first on all screen sizes */}
+          <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-lg p-4">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold text-gray-800">
@@ -219,6 +211,14 @@ export default function InterviewPage({ params }: { params: { company: string } 
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Suggested Questions — below chat on mobile, sidebar on desktop */}
+          <div className="lg:col-span-1">
+            <SuggestedQuestions
+              onSelectQuestion={handleAskQuestion}
+              questions={suggestedQuestions}
+            />
           </div>
         </div>
       </div>

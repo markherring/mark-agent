@@ -49,7 +49,7 @@ export function InterviewHeader({ company }: InterviewHeaderProps) {
         </div>
       </div>
 
-      <div className="mt-5 pt-5 border-t border-gray-200">
+      <div className="hidden sm:block mt-5 pt-5 border-t border-gray-200">
         <p className="text-sm text-gray-700 leading-relaxed">
           <strong>AI-fluent, technically grounded marketing leader</strong> focused on rebuilding and modernizing go-to-market systems, turning complex developer, data, and infrastructure platforms into scalable, forecastable revenue across PLG and enterprise.
         </p>
